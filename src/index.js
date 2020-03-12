@@ -1,36 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom'
-import {createStore,applyMiddleware } from 'redux'
-import { Provider } from "react-redux";
-import {reducers} from "./js/store/reducer";
-import thunk from 'redux-thunk'
-import { AppContainer } from 'react-hot-loader';
-const store = createStore(reducers,applyMiddleware(thunk));
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import { Provider } from 'react-redux'
+import {Router} from "react-router-dom";
+import Routers from "./router/router"
+import {createBrowserHistory} from "history";
+const history = createBrowserHistory();
+import createStore from './store/index'
+const store = createStore();
+import 'antd/dist/antd.css';
+import "@public/reset.scss"
 
-import App from './js/app'
-
-
-// 熱更新配置開始
+// 配置热更新
 if (module.hot) {
-    module.hot.accept(() => {
-      ReactDom.render(
-        <Provider store = {store}>
-        <Router >
-            <App/>
-        </Router>
-    </Provider>,
-          document.getElementById('root')
-      )
-    })
-  }
-// 熱更新配置結束
+	console.log("热更新");
+	module.hot.accept(() => {
+		ReactDom.render(
+			<Routers />,
+			document.getElementById('root')
+		)
+	})
+}
+
+
 ReactDOM.render(
-    <Provider store = {store}>
-        <Router >
-            <App/>
-        </Router>
-    </Provider>
-    ,
-    document.getElementById('root')
+  <Provider store={store}>
+    <Router history={history}>
+      <Routers />
+    </Router>
+   </Provider>,
+  document.getElementById("root")
 );

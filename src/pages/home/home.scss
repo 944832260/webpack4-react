@@ -1,0 +1,153 @@
+@import '../../public/reset.scss';
+
+#Home {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+    .header {
+		height: 60px;
+		width: 100%;
+		background-color: #ffffff;
+		padding: 0 vm(200) ;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		.left{
+			width: vm(200);
+			color: #1890ff;
+			font-size: 30px;
+			font-weight: bold;
+		}
+		.right{
+			width: vm(800);
+			height: 60px;
+			ul{
+				width: vm(1000);
+				height: 60px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				li{
+					font-size: 14px;
+					margin: 0 20px;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	.mainstay{
+		width: 100%;
+		padding: 0 vm(200) ;
+		display: flex;
+		justify-content: space-between;
+		margin-top: 10px;
+		.mainstayLeft{
+			width: vm(800);
+			.item{
+				width: 100%;
+				padding: 20px;
+				background-color: #ffffff;
+				margin-bottom: 10px;
+				h3{
+					font-size: 16px;
+					font-weight: bold;
+					color: #1890ff;
+				}
+				.tips{
+					margin-top: 4px;
+					font-size: 14px;
+					color: #cccccc;
+				}
+				.content{
+					margin-top: 10px;
+				}
+			}
+		}
+		.mainstayRight{
+			width: vm(190);
+			.introduce{
+				background-color: #ffffff;
+				padding-bottom: 20px;
+				.portrait{
+					width: 100%;
+					height: 128px;
+					display: flex;
+					justify-content: center;
+					padding-top: 14px;
+					padding-bottom: 14px;
+					img{
+						width: 100px;
+						height: 100px;
+						border-radius: 100px;
+					}
+				}
+				.name{
+					p{
+						text-align: center;
+						font-size: 16px;
+						color: #1890ff;
+					}
+				}
+				.speciality{
+					font-size: 14px;
+					color: #999999;
+					text-align: center;
+					padding: 15px 0;
+				}
+				.label{
+					padding: 0 20px;
+					span{
+						margin-top: 5px;
+						padding: 3px 6px;
+						border: 1px solid #1890ff;
+						border-radius: 5px;
+						margin-right: 10px;
+						display: inline-block;
+					}
+				}
+				.contact{
+					padding: 0 20px;
+					.linefather{
+						height: 40px;
+						width: 100%;
+						.contactLine{
+							border-bottom: 1px solid #cccccc;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							span{
+								position: relative;
+								top: 10px;
+								font-size: 16px;
+								background-color: #ffffff;
+								padding: 0 20px;
+							}
+						}
+					}
+					
+					.contactTotal{
+						display: flex;
+						justify-content: center;
+						.contactItem{
+							width: 26px;
+							height: 26px;
+							margin: 0 5px;
+							cursor: pointer;
+							position: relative;
+							img{
+								width: 100%;
+								height: 100%;
+							}
+							.info{
+								position: absolute;
+								padding: 10px;
+								background-color: rgba($color: #000000, $alpha: 0.4);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

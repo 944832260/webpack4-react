@@ -2,7 +2,6 @@
 /.idea
 .DS_Store
 *.DS_Store
-/frontend
+/.vscode
+/blog
 /npm-debug.log
-/package-lock.json
-*.pyc
