@@ -80,6 +80,7 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
+                            esModule: false,//file-loader在5.0版本更新中默认为了true，所以显示 [object Module]
                             limit: 0,
                             // name: '[name].[ext]',
                             name: "/image/[name].[hash:8].[ext]"
