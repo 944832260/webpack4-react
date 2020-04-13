@@ -5,7 +5,7 @@ class Login extends Component {
     render() {
         return (
             <div id='login'>
-                登录组件av我们都一样
+                登录组件av我们都一样sfdsfsfd
             </div>
         );
     }

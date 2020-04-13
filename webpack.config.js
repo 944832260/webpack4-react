@@ -11,6 +11,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const {MODE} = process.env;
 let IsDevelopment = MODE === 'development';//development是true,不是开发false
 console.log(MODE,'MODE------>')
+
+const Config = require('./config')
 module.exports = {
     mode:MODE,
     devtool:IsDevelopment?'source-map':'cheap-module-source-map',//增加映射文件，可以帮我们调试源码，出错了会报出错的列和行
@@ -153,8 +155,16 @@ module.exports = {
         // ]),
     ],  // 对应的插件
     devServer: {
-        port:'8002',
-        host:'0.0.0.0',
+        port:Config.port,
+        host:Config.ip,
+        proxy: Config.proxy.map(item => (
+            {
+            context: item.path,
+            target: item.target,
+            changeOrigin: true,
+            secure: false
+            }
+        )),
         contentBase: path.join(__dirname, 'blog'), //服务器根路径
         compress: true, // 服务端压缩
         disableHostCheck:IsDevelopment?true:false,

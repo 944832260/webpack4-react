@@ -30,7 +30,7 @@ class Home extends React.Component {
 				<button onClick={this.router}>跳转到登录页</button>
 				
 				<img src={require('../../assets/a.png')} alt=""/>
-				<img src={require('../../assets/b.png')} alt=""/>
+				{/* <img src={require('../../assets/b.png')} alt=""/> */}
 			</div>
 		);
 	}
