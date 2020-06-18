@@ -1,7 +1,5 @@
 import { lazy } from 'react'
 
-
-
 const Config = [
 	{
 		path: '/',
